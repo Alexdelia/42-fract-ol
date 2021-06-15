@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/15 19:11:55 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/15 20:17:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,29 @@ static int	ft_no_param(void)
 	return (1);
 }
 
+static void	ft_init_env(t_env *env)
+{
+	env->mlx = mlx_init();
+	env->size_x = 300;
+	env->size_y = 300;
+}
+
 int	main(int ac, char **av)
 {
 	t_arg	arg;
+	t_env	env;
 
 	if (ac == 1)
 		return (ft_no_param());
 	if (ft_arg(&arg, ac, av) != TRUE);
 		return (2);
+	ft_init_env(&env);
+	//while (escape / x not press)
+	//	render
+	//	if wheel move
+	//		zoom / un-zoom
+
+	//	not optimal will tweak it
+	mlx_loop(env.mlx);
 	return (0);
 }
