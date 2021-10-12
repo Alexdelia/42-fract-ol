@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/15 20:17:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/12 14:17:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	ft_init_env(t_env *env)
 
 int	main(int ac, char **av)
 {
+	// might create a struct that hold them both
 	t_arg	arg;
 	t_env	env;
 
@@ -44,11 +45,15 @@ int	main(int ac, char **av)
 		return (2);
 	ft_init_env(&env);
 	//while (escape / x not press)
-	//	render
-	//	if wheel move
-	//		zoom / un-zoom
+	// mlx_hook in diplay
+	mlx_hook(env->win, 33, 1L << 5, ft_free_exit, params); //params = struct to pass in arg
+	mlx_hook(env->win, 2, 1L << 0, ft_handl_key_press, struct(argument to pass));
+	//mlx_hook(env->win, 15, 1L << 16, ft_minimize, struct(argument to pass)); // change visibility
+	//mlx_hook for zoom / un-zoom
+	ft_render();
+	ft_display(); // mlx_put_img_to_window(mlx, win, (img), 0, 0);
 
-	//	not optimal will tweak it
+	//	not optimal will tweak it ?
 	mlx_loop(env.mlx);
 	return (0);
 }
