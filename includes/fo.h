@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/15 20:12:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:58:47 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,19 @@ typedef struct	s_arg
 	int			type;
 }				t_arg;
 
+typedef struct	s_img
+{
+	void		*addr;
+	char		*buffer;
+}				t_img;
+
 typedef struct	s_env
 {
 	void		*mlx;
 	void		*win;
 	int			size_x;
 	int			size_y;
+	t_img		*img;
 }				t_env;
 
 typedef struct	s_color
