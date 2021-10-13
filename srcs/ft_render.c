@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/13 12:47:23 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/13 13:00:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_render(xxx)
 			x++;
 		}
 		y++;
-		printf("\rRender: [%d%%]", i + 1, (y * 100) / env->size_y);
+		printf("\rRender: [%d%%]", (y * 100) / env->size_y);
 	}
 	printf("		\033[1;32mDone\033[0m\033[1m\n");
 	return (TRUE); //
