@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:26:32 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 14:08:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ static int	ft_no_param(void)
 
 static void	ft_init_env(t_env *env)
 {
+	env->img = malloc(sizeof(t_img));
+	if (!env->img)
+		exit(1);
 	env->mlx = mlx_init();
-	env->size_x = 300;
-	env->size_y = 300;
+	env->size_x = 1000;
+	env->size_y = 800;
 }
 
 int	main(int ac, char **av)

@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_ints_to_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 12:58:20 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 14:07:59 by adelille         ###   ########.fr       */
+/*   Created: 2021/10/14 13:41:27 by adelille          #+#    #+#             */
+/*   Updated: 2021/10/14 13:44:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fo.h"
 
-int	ft_free_exit(t_params *p)
+int	ft_ints_to_int(int r, int g, int b)
 {
-	mlx_destroy_image(p->env->mlx, p->env->img->addr);
-	mlx_destroy_window(p->env->mlx, p->env->win);
-	mlx_destroy_display(p->env->mlx);
-	free(p->env->img);
-	free(p->env->mlx);
-	free(p);
-	exit (0);
-	return (1);
+	int	color;
+
+	color = r | g << 8 | b << 16;
+	return (color);
 }

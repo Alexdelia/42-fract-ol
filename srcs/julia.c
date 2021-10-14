@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/13 20:13:54 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 14:19:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define	C_R		-0.7
 #define	C_IM	0.27015
 
-#define	MAX_ITERATION	1000
+#define	MAX_ITERATION	100
 
 int	ft_julia(t_env *env, int x, int y)
 {
@@ -36,10 +36,11 @@ int	ft_julia(t_env *env, int x, int y)
 		oldR = newR;
 		oldIm = newIm;
 		newR = oldR * oldR - oldIm * oldIm + C_R;
-		newIm = 2 * oldR * oldIm + C_I;
+		newIm = 2 * oldR * oldIm + C_IM;
 		if ((newR * newR + newIm * newIm) > 4)
 			break ;
 		i++;
 	}
-	return (ft_ints_to_int(i % 256, 255, 255 * (i < MAX_ITERATION), 0));
+	//return (ft_ints_to_int(255 - 255 * ((MAX_ITERATION - i) * (MAX_ITERATION - i)) % (MAX_ITERATION * MAX_ITERATION), 0, 0));
+	//return (ft_ints_to_int(i % 256, 255, 255 * (i < MAX_ITERATION)));
 }

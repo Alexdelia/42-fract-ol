@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:30:50 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:45:10 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,9 @@ int		ft_render(t_env *env);
 int		ft_display(t_env *env);
 
 int		ft_julia(t_env *env, int x, int y);
+
+int		ft_ints_to_int(int r, int g, int b);
+
+int		ft_free_exit(t_params *p);
 
 #endif

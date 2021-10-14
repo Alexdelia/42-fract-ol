@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/14 13:19:24 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/14 13:54:16 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,13 @@ AR =	ar rcs
 RM = 	rm -rf
 # FLAGS +=	-O2
 FLAGS =	-g# -fsanitize=address
+
+# GRAPHICAL LFGLAGS (for linux):
+LDFLAGS		+=	-lXext -lX11
+# -lmlx
+
+# LDFLAGS (math.h)
+LDFLAGS		+=	-lm
 
 # **************************************************************************** #
 
@@ -41,6 +48,10 @@ LBPATH =	./libft/
 LBNAME =	$(LBPATH)libft.a
 LBINC =		-I$(LBPATH)
 
+MLXPATH =	./mlx/
+MLXNAME =	$(MLXPATH)libmlx.a
+MLXINC =	-I$(MLXPATH)
+
 # **************************************************************************** #
 
 SRCSPATH =	./srcs/
@@ -52,22 +63,22 @@ SRCSNAME =	main.c \
 			ft_render.c \
 			ft_display.c \
 			julia.c \
-			free.c
+			free.c ft_ints_to_int.c
 
 SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
 OBJSNAME = $(SRCS:.c=.o)
 OBJS = $(addprefix $(OBJSPATH), $(notdir $(OBJSNAME)))
 
 %.o: %.c
-	$(CC) $(FLAGS) $(BUFFER) -I$(INC) -c $< -o $(OBJSPATH)$(notdir $@)
+	$(CC) $(FLAGS) -Imlx $(BUFFER) -I$(INC) -c $< -o $(OBJSPATH)$(notdir $@)
 
 # *************************************************************************** #
 
 all:		$(NAME)
 
-$(NAME):	objs_dir $(OBJSNAME) lib
+$(NAME):	objs_dir $(OBJSNAME) lib mlx
 	#@$(AR) $(NAME) $(OBJS)
-	@$(CC) $(FLAGS) $(OBJS) $(LBNAME) -o $(NAME)
+	@$(CC) $(FLAGS) $(LDFLAGS) $(OBJS) $(LBNAME) $(MLXNAME) -o $(NAME)
 	@echo "$(B)$(MAG)$(NAME) compiled$(D)"
 
 objs_dir:
@@ -76,9 +87,13 @@ objs_dir:
 lib:
 	@make -C $(LBPATH)
 
+mlx:
+	@make -C $(MLXPATH)
+
 clean:
 	@$(RM) $(OBJSNAME)
 	@make clean -C $(LBPATH)
+	@make clean -C $(MLXPATH)
 	@echo "$(B)Cleared.$(D)"
 
 
@@ -86,9 +101,10 @@ fclean:		clean
 	@$(RM) $(OBJSPATH)
 	@$(RM) $(NAME)
 	@make fclean -C $(LBPATH)
+	@make fclean -C $(MLXPATH)
 
 re:			fclean all
 
-.PHONY: all clean fclean re objs_dir lib
+.PHONY: all clean fclean re objs_dir lib mlx
 
 # **************************************************************************** #
