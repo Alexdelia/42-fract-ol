@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:16:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:29:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	ft_render(t_env *env)
 	int	y;
 	int	index;
 
-	env->img.addr = mlx_new_image(env->mlx, env->size_x, env->size_y);
-	env->img.buffer = mlx_get_data_addr(env->img.addr, &env->img.bpp,
-			&env->img.line_size, &env->img.endian);
+	env->img->addr = mlx_new_image(env->mlx, env->size_x, env->size_y);
+	env->img->buffer = mlx_get_data_addr(env->img->addr, &env->img->bpp,
+			&env->img->line_size, &env->img->endian);
 	index = 0;
 	y = 0;
 	while (y < env->size_y)

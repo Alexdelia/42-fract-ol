@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:13:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:30:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../mlx/mlx.h"
 
 # include <math.h>
+# include <stdio.h>
 
 # define T_JULIA	1
 # define T_MANDEL	2
@@ -51,6 +52,14 @@ typedef struct	s_color
 typedef struct	s_params
 {
 	t_env		*env;
-}
+}				t_params;
+
+int		ft_arg(t_env *env, int ac, char **av);
+void	ft_option(void);
+
+int		ft_render(t_env *env);
+int		ft_display(t_env *env);
+
+int		ft_julia(t_env *env, int x, int y);
 
 #endif

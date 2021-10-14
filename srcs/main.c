@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:17:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:26:32 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		return (ft_no_param());
-	if (ft_arg(&env, ac, av) == FALSE);
+	if (ft_arg(&env, ac, av) == FALSE)
 		return (2);
 	ft_init_env(&env);
 	//while (escape / x not press)

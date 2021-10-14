@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/06/15 18:47:45 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/14 13:19:24 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,12 @@ SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
 INC =		./includes/
 
-SRCSNAME =	main.c
+SRCSNAME =	main.c \
+			ft_arg.c \
+			ft_render.c \
+			ft_display.c \
+			julia.c \
+			free.c
 
 SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
 OBJSNAME = $(SRCS:.c=.o)
