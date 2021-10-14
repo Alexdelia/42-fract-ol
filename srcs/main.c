@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 12:50:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:17:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,17 @@ static void	ft_init_env(t_env *env)
 int	main(int ac, char **av)
 {
 	// might create a struct that hold them both
-	t_arg	arg;
-	t_env	env;
+	t_env		env;
 
 	if (ac == 1)
 		return (ft_no_param());
-	if (ft_arg(&arg, ac, av) != TRUE);
+	if (ft_arg(&env, ac, av) == FALSE);
 		return (2);
 	ft_init_env(&env);
 	//while (escape / x not press)
 	//mlx_hook for zoom / un-zoom + wasd (+ zoom on mouse)
-	ft_render(&env, &arg);
-	ft_display();
+	ft_render(&env);
+	ft_display(&env);
 	mlx_loop(env.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/15 19:16:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:15:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static int	ft_wrong_param(char *type)
 	return (FALSE);
 }
 
-int	ft_arg(t_arg *arg, int ac, char **av)
+int	ft_arg(t_env *env, int ac, char **av)
 {
-	arg->type = 0;
+	env->type = 0;
 	if (ft_strcmp(av[1], "J") == 0 || ft_strcmp(av[1], "Julia") == 0)
-		arg->type == T_JULIA;
-	else if (ft_strcmp(av[1], "J") == 0 || ft_strcmp(av[1], "Julia") == 0)
-		arg->type == T_MANDEL;
+		env->type == T_JULIA;
+	else if (ft_strcmp(av[1], "M") == 0 || ft_strcmp(av[1], "Mandelbrot") == 0)
+		env->type == T_MANDEL;
 	else
 		return (ft_wrong_param(av[1]));
 	return (TRUE);

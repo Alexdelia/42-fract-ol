@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/13 20:14:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/14 13:16:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_pixel(t_img *img, int color, int index)
 	img->buffer[index + 3] = 0;
 }
 
-int	ft_render(t_env *env, t_arg *arg)
+int	ft_render(t_env *env)
 {
 	int	x;
 	int	y;
@@ -46,7 +46,7 @@ int	ft_render(t_env *env, t_arg *arg)
 		while (x < env->size_x)
 		{
 			// if julia, launch julia
-			if (arg->type == T_JULIA)
+			if (env->type == T_JULIA)
 				ft_pixel(env->img, ft_julia(env, x, y), index);
 			index += 4;
 			x++;
