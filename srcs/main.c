@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 15:20:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:21:53 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_option(void)
 	ft_pserc("[MAX_ITERATION] ", RED);
 	ft_pserc("[REAL] [IMAGINARY]\n", BMAG);
 	ft_pserc("\n  - type:\n", "\033[3;34m");
-	ft_pserc("./fractol Julia\n\t= ./fractol J\n", "\033[1;34m");
-	ft_pserc("./fractol Mandelbrot\n\t= ./fractol M\n", "\033[1;34m");
+	ft_pserc("./fractol Julia\n  = ./fractol J\n", "\033[1;34m");
+	ft_pserc("./fractol Mandelbrot\n  = ./fractol M\n", "\033[1;34m");
 	ft_pserc("\n  - example:\n", "\033[3;37m");
 	ft_pserc("./fractol ", BWHI);
 	ft_pserc("J ", "\033[1;34m");
