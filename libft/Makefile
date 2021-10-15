@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/15 14:06:56 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/15 22:46:44 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,6 @@ objs_dir:
 clean:
 	@$(RM) $(OBJSPATH)
 # @make clean -C $(LBPATH)
-	@echo "$(B)Cleared.$(D)"
 
 
 fclean:		clean
