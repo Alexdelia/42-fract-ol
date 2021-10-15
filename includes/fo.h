@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 15:08:00 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:08:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ int		ft_red_to_black(int color);
 
 int		ft_free_exit(t_params *p);
 int		ft_is_double(const char *n);
+int		ft_is_num(const char *n);
 
 #endif

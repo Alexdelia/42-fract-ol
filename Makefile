@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/15 15:08:22 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/15 20:08:28 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ SRCSNAME =	main.c \
 			ft_render.c color.c \
 			ft_display.c \
 			julia.c \
-			free.c ft_is_double.c help.c
+			free.c \
+			utils/ft_is_double.c utils/ft_is_num.c \
+			utils/help.c
 
 SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
 OBJSNAME = $(SRCS:.c=.o)

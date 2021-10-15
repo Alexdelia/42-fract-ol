@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:20:33 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:36:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:14:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	ft_is_double(const char *n)
 	int				p;
 
 	i = 0;
-	while (n[i] == '\t' || n[i] == '\n' || n[i] == '\v'
-			|| n[i] == '\f' || n[i] == '\r' || n[i] == ' ')
+	while (n[i] && (n[i] == '\t' || n[i] == '\n' || n[i] == '\v'
+			|| n[i] == '\f' || n[i] == '\r' || n[i] == ' '))
 		i++;
-	if (n[i] == '+' || n[i] == '-')
+	if (n[i] && (n[i] == '+' || n[i] == '-'))
 		i++;
+	if (!n[i])
+		return (FALSE);
 	p = FALSE;
 	while (n[i])
 	{
