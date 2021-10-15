@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:39:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:08:00 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 # define T_JULIA	1
 # define T_MANDEL	2
+
+# define SIZE_X			1024
+# define SIZE_Y			768
 
 # define MAX_ITERATION	250
 # define REAL			-0.7
@@ -70,7 +73,8 @@ typedef struct	s_complex
 }				t_complex;
 
 int		ft_arg(t_env *env, int ac, char **av);
-void	ft_option(void);
+int		ft_has_help(int ac, char **av);
+int		ft_option(void);
 
 int		ft_render(t_env *env);
 int		ft_display(t_env *env);

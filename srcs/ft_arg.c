@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:20:27 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:06:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_complex_arg(t_env *env, int ac, char **av)
 
 int	ft_arg(t_env *env, int ac, char **av)
 {
+	if (ft_has_help(ac, av) == TRUE)
+		return (ft_option());
 	env->type = 0;
 	if (ft_strcmp(av[1], "J") == 0 || ft_strcmp(av[1], "Julia") == 0)
 		env->type = T_JULIA;
