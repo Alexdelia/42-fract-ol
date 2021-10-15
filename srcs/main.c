@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 04:26:49 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:42:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,6 @@ static void	ft_init_env(t_env *env)
 	env->mlx = mlx_init();
 	env->size_x = 1024;
 	env->size_y = 768;
-	//env->ite = 250;
-	//env->real = -0.7;
-	//env->imaginary = 0.27015;
-	/*env->real = 0;
-	env->imaginary = -0.8;
-	env->ite = 15;*/
-	/*env->real = -0.835;
-	env->imaginary = 0.2321;
-	env->ite = 10000000;*/
-	/*env->real = -1;
-	env->imaginary = -1.618033988749;
-	env->ite = 1000000000;*/
-	/*env->real = 0;
-	env->imaginary = -1;
-	env->ite = 250;*/
-	/*env->real = -0.83;
-	env->imaginary = 0;
-	env->ite = 250;*/
-	env->real = 0.4;
-	env->imaginary = -0.8;
-	env->ite = 16;
 }
 
 int	main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:04:23 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:20:27 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,19 @@ static int	ft_wrong_param(char *type)
 
 int	ft_complex_arg(t_env *env, int ac, char **av)
 {
-
+	env->real = REAL;
+	env->imaginary = IMAGINARY;
+	env->ite = ft_atol(av[2]);
+	if (env->ite == 0)
+		env->ite = MAX_ITERATION;
+	if (ft_is_double(av[3]) == FALSE || ft_is_double(av[4]) == FALSE)
+		return (ft_pserc("Error: Some arg that should be numbers are not\n",
+					RED) * 0);
+	if (ac >= 5)
+	{
+		env->real = ft_atof(av[3]);
+		env->imaginary = ft_atof(av[4]);
+	}
 	return (TRUE);
 }
 

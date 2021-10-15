@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:05:43 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:06:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:27:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ double	ft_atof(const char *str)
 	{
 		res = res * 10 + str[i++] - 48;
 	}
-	if (str[i] == '.')
+	if (str[i] == '.' || str[i] == ',')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{

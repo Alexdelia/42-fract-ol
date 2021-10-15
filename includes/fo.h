@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 03:57:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:39:05 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 
 # define T_JULIA	1
 # define T_MANDEL	2
+
+# define MAX_ITERATION	250
+# define REAL			-0.7
+# define IMAGINARY		0.27015
 
 typedef struct	s_img
 {
@@ -38,7 +42,7 @@ typedef struct	s_env
 	int			size_x;
 	int			size_y;
 	int			type;
-	int			ite;
+	long		ite;
 	double		real;
 	double		imaginary;
 	t_img		*img;
@@ -78,5 +82,6 @@ int		ft_adjust_int(int color);
 int		ft_red_to_black(int color);
 
 int		ft_free_exit(t_params *p);
+int		ft_is_double(const char *n);
 
 #endif
