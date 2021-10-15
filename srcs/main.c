@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 14:08:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 03:52:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ static void	ft_init_env(t_env *env)
 	if (!env->img)
 		exit(1);
 	env->mlx = mlx_init();
-	env->size_x = 1000;
-	env->size_y = 800;
+	env->size_x = 1024;
+	env->size_y = 768;
+	env->ite = 250;
+	env->real = -0.7;
+	env->imaginary = 0.27015;
 }
 
 int	main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:45:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 03:54:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ typedef struct	s_env
 	int			size_x;
 	int			size_y;
 	int			type;
+	int			ite;
+	double		real;
+	double		imaginary;
 	t_img		*img;
 }				t_env;
 
@@ -54,6 +57,14 @@ typedef struct	s_params
 	t_env		*env;
 }				t_params;
 
+typedef struct	s_complex
+{
+	double		r0;
+	double		r1;
+	double		i0;
+	double		i1;
+}				t_complex;
+
 int		ft_arg(t_env *env, int ac, char **av);
 void	ft_option(void);
 
@@ -63,6 +74,7 @@ int		ft_display(t_env *env);
 int		ft_julia(t_env *env, int x, int y);
 
 int		ft_ints_to_int(int r, int g, int b);
+int		ft_adjust_int(int color);
 
 int		ft_free_exit(t_params *p);
 
