@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:08:52 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 21:17:23 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int		ft_render(t_env *env);
 int		ft_display(t_env *env);
 
 int		ft_julia(t_env *env, int x, int y);
+int		ft_mandelbrot(t_env *env, int x, int y);
 
 int		ft_ints_to_int(int r, int g, int b);
 int		ft_adjust_int(int color);

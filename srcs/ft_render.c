@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 13:36:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 21:16:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ int	ft_render(t_env *env)
 		x = 0;
 		while (x < env->size_x)
 		{
-			// if julia, launch julia
 			if (env->type == T_JULIA)
 				ft_pixel_fix(env->img, ft_julia(env, x, y), index);
+			else if (env->type == T_MANDEL)
+				ft_pixel_fix(env->img, ft_mandelbrot(env, x, y), index);
 			index += 4;
 			x++;
 		}
