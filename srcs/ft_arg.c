@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 13:28:52 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:04:23 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ static int	ft_wrong_param(char *type)
 	return (FALSE);
 }
 
+int	ft_complex_arg(t_env *env, int ac, char **av)
+{
+
+	return (TRUE);
+}
+
 int	ft_arg(t_env *env, int ac, char **av)
 {
-	(void)ac;
 	env->type = 0;
 	if (ft_strcmp(av[1], "J") == 0 || ft_strcmp(av[1], "Julia") == 0)
 		env->type = T_JULIA;
@@ -32,5 +37,7 @@ int	ft_arg(t_env *env, int ac, char **av)
 		env->type = T_MANDEL;
 	else
 		return (ft_wrong_param(av[1]));
+	if (ac > 2 && ft_complex_arg(env, ac, av) == FALSE)
+		return (FALSE);
 	return (TRUE);
 }

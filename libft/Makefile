@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/15 13:52:01 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/15 14:06:56 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ INC =		./includes/
 
 SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				I-O/ft_putnbr_fd.c I-O/ft_putstr_fd.c I-O/ft_pn.c \
-				str/ft_atoi.c str/ft_atol.c str/ft_itoa.c \
+				str/ft_atoi.c str/ft_atol.c str/ft_atof.c str/ft_itoa.c \
 				str/ft_bzero.c str/ft_split.c str/ft_strchr.c \
 				str/ft_strcmp.c str/ft_strdup.c str/ft_strjoin.c str/ft_strlcat.c \
 				str/ft_strlcpy.c str/ft_strcpy.c \
