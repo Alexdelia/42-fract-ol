@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 03:57:44 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 04:02:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_julia(t_env *env, int x, int y)
 	int			i;
 
 	// tmp
-	double	zoom = 1, move_x = 0, move_y = 0; // will be get from input
+	double	zoom = 0.75, move_x = 0, move_y = 0; // will be get from input
 
 	// tmp
 	int	res;
