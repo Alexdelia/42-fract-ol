@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:26:23 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:28:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	ft_wrong_param(char *type)
 {
-	ft_pserc("Parssing Error:\t\"", RED);
+	ft_pserc("Parssing Error: ", RED);
+	ft_pser("\"");
 	ft_pser(type);
 	ft_pser("\" doesn't corespond to any options.\n");
 	ft_pser("Here is a list of availible options:\n");
