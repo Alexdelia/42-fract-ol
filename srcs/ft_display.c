@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 20:26:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/14 14:11:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 13:35:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int	ft_display(t_env *env)
 	mlx_hook(env->win, 33, 1L << 5, ft_free_exit, p);
 	mlx_hook(env->win, 2, 1L << 0, ft_keypress, p);
 	mlx_hook(env->win, 15, 1L << 16, ft_minimize, p);
+	free(p);
 	return (TRUE);
 }
