@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:12:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:27:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ static void	ft_init_env(t_env *env)
 
 int	main(int ac, char **av)
 {
-	// might create a struct that hold them both
 	t_env		env;
 
 	if (ac == 1)
