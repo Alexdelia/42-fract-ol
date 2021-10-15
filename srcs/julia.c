@@ -6,25 +6,11 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 03:53:35 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/15 03:57:44 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fo.h"
-
-int	ft_red_to_black(int color)
-{
-	int r;
-	int g;
-	int b;
-
-	r = color & 0xFF;
-	g = color >> 8 & 0xFF;
-	b = color >> 16 & 0xFF;
-	if (r == 255 && g == 0 && b == 0)
-		return (0);
-	return (color);
-}
 
 int	ft_julia(t_env *env, int x, int y)
 {
