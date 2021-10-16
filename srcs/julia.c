@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 04:02:04 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/16 21:10:38 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int	ft_julia(t_env *env, int x, int y)
 	// tmp
 	int	res;
 
-	c.r0 = 1.5 * (x - env->size_x / 2) / (0.5 * zoom * env->size_x) + move_x;
-	c.i0 = (y - env->size_y / 2) / (0.5 * zoom * env->size_y) + move_y;
+	c.cr = 1.5 * (x - env->size_x / 2) / (0.5 * zoom * env->size_x) + move_x;
+	c.ci = (y - env->size_y / 2) / (0.5 * zoom * env->size_y) + move_y;
 	i = 0;
 	while (i < env->ite)
 	{
-		c.r1 = c.r0;
-		c.i1 = c.i0;
-		c.r0 = c.r1 * c.r1 - c.i1 * c.i1 + env->real;
-		c.i0 = 2 * c.r1 * c.i1 + env->imaginary;
-		if ((c.r0 * c.r0 + c.i0 * c.i0) > 4)
+		c.zr = c.cr;
+		c.zi = c.ci;
+		c.cr = c.zr * c.zr - c.zi * c.zi + env->real;
+		c.ci = 2 * c.zr * c.zi + env->imaginary;
+		if ((c.cr * c.cr + c.ci * c.ci) > 4)
 			break ;
 		i++;
 	}

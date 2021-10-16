@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:30:14 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/16 22:19:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ static void	ft_init_env(t_env *env)
 	env->mlx = mlx_init();
 	env->size_x = SIZE_X; // need to check if bigger than screen
 	env->size_y = SIZE_Y; //might had possiblity to change from arg
+	if (env->type == T_MANDEL)
+	{
+		env->size_x = 1000;
+		env->size_y = 1000;
+	}
 }
 
 int	main(int ac, char **av)

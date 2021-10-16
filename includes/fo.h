@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 21:17:23 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/16 21:04:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ typedef struct	s_params
 
 typedef struct	s_complex
 {
-	double		r0;
-	double		r1;
-	double		i0;
-	double		i1;
+	double		cr;
+	double		ci;
+	double		zr;
+	double		zi;
 }				t_complex;
 
 int		ft_arg(t_env *env, int ac, char **av);
