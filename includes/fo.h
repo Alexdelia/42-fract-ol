@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/16 21:04:18 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:20:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 
 # define T_JULIA	1
 # define T_MANDEL	2
+
+# define M_SCROLL_UP	4
+# define M_SCROLL_DOWN	5
+# define K_LEFT			123
+# define K_RIGHT		124
+# define K_DOWN			125
+# define K_UP			126
 
 # define SIZE_X			1024
 # define SIZE_Y			768
@@ -48,6 +55,9 @@ typedef struct	s_env
 	long		ite;
 	double		real;
 	double		imaginary;
+	t_complex	min;
+	t_complex	max;
+	t_complex	factor;
 	t_img		*img;
 }				t_env;
 
