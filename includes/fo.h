@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/18 18:20:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:34:31 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct	s_env
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
+	t_complex	c;
 	t_img		*img;
 }				t_env;
 
@@ -68,11 +69,6 @@ typedef struct	s_color
 	double		b;
 	int			shadow;
 }				t_color;
-
-typedef struct	s_params
-{
-	t_env		*env;
-}				t_params;
 
 typedef struct	s_complex
 {
@@ -99,5 +95,6 @@ int		ft_red_to_black(int color);
 int		ft_free_exit(t_params *p);
 int		ft_is_double(const char *n);
 int		ft_is_num(const char *n);
+t_complex	ft_init_complex(double real, double imaginary);
 
 #endif

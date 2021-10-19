@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/16 22:19:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:31:17 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ static void	ft_init_env(t_env *env)
 	if (!env->img)
 		exit(1);
 	env->mlx = mlx_init();
+	env->img->addr = mlx_new_image(env->mlx, env->size_x, env->size_y);
+	env->img->buffer = mlx_get_data_addr(env->img->addr, &env->img->bpp,
+			&env->img->line_size, &env->img->endian);
+	//mlx_hook(env->win, x, 1L << x, ft_function, struct);	
+	mlx_hook(env->win, 2, 1L << 0, ft_keypress, env);
+	mlx_hook(env->win, 4, 0, ft_zoom, env);
+	mlx_hook(env->win, 15, 1L << 16, ft_minimize, env);
+	mlx_hook(env->win, 33, 1L << 5, ft_free_exit, env);
 	env->size_x = SIZE_X; // need to check if bigger than screen
 	env->size_y = SIZE_Y; //might had possiblity to change from arg
 	if (env->type == T_MANDEL)
@@ -65,7 +73,6 @@ int	main(int ac, char **av)
 	//while (escape / x not press)
 	//mlx_hook for zoom / un-zoom + wasd (+ zoom on mouse)
 	ft_render(&env);
-	ft_display(&env);
 	mlx_loop(env.mlx);
 	return (0);
 }

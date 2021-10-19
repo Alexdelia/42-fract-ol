@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 13:41:27 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/17 21:22:55 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:04:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,13 @@ int	ft_red_to_black(int color)
 	if (r == 255 && g == 0 && b == 0)
 		return (0);
 	return (color);
+}
+
+int	ft_color_to_int(t_color color)
+{
+	int	cint;
+
+	cint = 0;
+	cint = (int)color.r | (int)color.g << 8 | (int)color.b << 16;
+	return (cint);
 }
