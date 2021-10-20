@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:58:20 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/19 20:33:43 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:27 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 int	ft_free_exit(t_env *env)
 {

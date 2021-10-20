@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:20:33 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:13:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:18:00 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 int	ft_is_num(const char *n)
 {

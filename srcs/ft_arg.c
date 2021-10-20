@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 20:28:45 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 static int	ft_wrong_param(char *type)
 {

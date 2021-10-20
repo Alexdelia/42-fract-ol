@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:53:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/19 20:24:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:17:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 static double	ft_interpolate(double min, double max, double inter)
 {

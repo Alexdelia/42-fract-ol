@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/19 20:19:58 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:53 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 void	ft_pixel(t_img *img, int color, int index)
 {

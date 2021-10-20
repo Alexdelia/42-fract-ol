@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 20:26:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/19 20:33:14 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 static int	ft_put_img_back(t_env *env)
 {

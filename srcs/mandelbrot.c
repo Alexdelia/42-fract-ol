@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:09:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/17 21:24:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:17:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 #define MIN_R -2
 #define MAX_R 2

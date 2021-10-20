@@ -6,11 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:46:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 19:53:30 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:18:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fo.h"
+#include "fractol.h"
 
 int	ft_has_help(int ac, char **av)
 {
