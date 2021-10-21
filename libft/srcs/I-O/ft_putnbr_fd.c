@@ -6,18 +6,11 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:56:13 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 15:35:43 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:42:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_abs(int nbr)
-{
-	if (nbr < 0)
-		return (-nbr);
-	return (nbr);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {

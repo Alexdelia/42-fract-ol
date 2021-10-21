@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/15 14:06:29 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:43:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
+int				ft_abs(int n);
 
 # define BWHI	"\033[1;37m"
 # define MAG	"\033[0;35m"

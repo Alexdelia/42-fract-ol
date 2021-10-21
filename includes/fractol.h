@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:55:06 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:13:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include "../libft/includes/libft.h"
 # include "../mlx/mlx.h"
+
+# if __APPLE__
+#  include "keypress_macos.h"
+# elif __linux__
+#  include "keypress_linux.h"
+# elif __unix__
+#  include "keypress_linux.h"
+# else
+#  error "OS not found"
+#  define "keypress_linux.h"
+# endif
 
 # include <math.h>
 # include <stdio.h>
@@ -32,13 +43,6 @@
 # define MIN_I			-2.0
 # define MAX_R			2.0
 # define MAX_I			2.0
-
-# define M_SCROLL_UP	4
-# define M_SCROLL_DOWN	5
-# define K_LEFT			123
-# define K_RIGHT		124
-# define K_DOWN			125
-# define K_UP			126
 
 typedef struct s_complex
 {

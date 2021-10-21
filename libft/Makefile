@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/15 22:46:44 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/21 19:45:52 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ SRCSNAME =	I-O/ft_ps.c I-O/ft_putchar_fd.c I-O/ft_putendl_fd.c \
 				str/ft_strlen.c str/ft_strmapi.c str/ft_strncmp.c \
 				str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c str/ft_substr.c \
 				str/ft_tolower.c str/ft_toupper.c \
-				nbr/ft_nbrlen.c \
+				nbr/ft_nbrlen.c nbr/ft_abs.c \
 				mem/ft_calloc.c mem/ft_memccpy.c mem/ft_memchr.c mem/ft_memcmp.c \
 				mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
 				lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c \
