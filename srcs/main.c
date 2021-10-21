@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:41:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:54:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_default(t_env *env)
 {
 	env->size_x = SIZE_X; // need to check if bigger than screen
 	env->size_y = SIZE_Y; //might had possiblity to change from arg
-	if (env->type == T_MANDEL)
+	/*if (env->type == T_JULIA)
 	{
-		env->size_x = 1000;
-		env->size_y = 1000;
-	}
+		env->size_x = 1024;
+		env->size_y = 768;
+	}*/
 	env->ite = MAX_ITERATION;
 	env->min = ft_init_complex(MIN_R, MIN_I);
 	env->max = ft_init_complex(MAX_R,

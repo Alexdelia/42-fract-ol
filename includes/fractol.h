@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:43:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:55:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define T_JULIA	1
 # define T_MANDEL	2
 
-# define SIZE_X			1024
-# define SIZE_Y			768
+# define SIZE_X			1000
+# define SIZE_Y			1000
 
 # define MAX_ITERATION	250
 # define REAL			-0.7

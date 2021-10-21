@@ -1,5 +1,6 @@
 #!/bin/bash
 
+./fractol M 250
 ./fractol J 250 -0.7 0.27015
 ./fractol J 15 0 -0.8
 ./fractol J 10000000 -0.835 0.2321
