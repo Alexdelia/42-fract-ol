@@ -6,32 +6,25 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:09:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/20 20:17:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:43:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-#define MIN_R -2
-#define MAX_R 2
-#define MIN_I -2
-#define MAX_I 2
-
-int	ft_mandelbrot(t_env *env, int x, int y)
+int	ft_mandelbrot(t_env *env)
 {
 	t_complex	c;
 	double		tmp;
 	int			i;
 
-	c.cr = (double)(x * 4) / env->size_x - 2;
-	c.ci = (double)(y * 4) / env->size_y - 2;
-	c.zr = c.cr;
-	c.zi = c.ci;
+	c.zr = env->c.cr;
+	c.zi = env->c.ci;
 	i = 0;
 	while (c.zr * c.zr + c.zi * c.zi < 4 && i < env->ite)
 	{
-		tmp = c.zr * c.zr - c.zi * c.zi + c.cr;
-		c.zi = 2 * c.zr * c.zi + c.ci;
+		tmp = c.zr * c.zr - c.zi * c.zi + env->c.cr;
+		c.zi = 2 * c.zr * c.zi + env->c.ci;
 		c.zr = tmp;
 		i++;
 	}
