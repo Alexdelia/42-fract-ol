@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/20 20:15:22 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:05:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_env
 	t_complex	max;
 	t_complex	factor;
 	t_complex	c;
+	t_complex	k;
 	t_img		*img;
 }				t_env;
 

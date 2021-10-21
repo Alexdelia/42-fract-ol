@@ -6,13 +6,13 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/20 20:17:01 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:07:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_julia(t_env *env, int x, int y)
+/*int	ft_julia(t_env *env, int x, int y)
 {
 	t_complex	c;
 	int			i;
@@ -37,4 +37,23 @@ int	ft_julia(t_env *env, int x, int y)
 				255 - 255 * ((env->ite - i) * (env->ite - i))
 				% (env->ite * env->ite), 0, 0)));
 	//return (ft_ints_to_int(i % 256, 255, 255 * (i < env->ite)));
+}*/
+
+int	ft_julia(t_env *env)
+{
+	t_complex	c;
+	int			i;
+
+	c.zr = env->c.cr;
+	c.zi = env->c.ci;
+	i = 0;
+	while (c.zr * c.zr + c.zi * c.zi < 4 && i < env->ite)
+	{
+		c = ft_init_complex(c.zr * c.zr - c.zi * c.zi + env->k.cr,
+				2 * c.zr * c.zi + env->k.cr);
+		i++;
+	}
+	return (ft_red_to_black(ft_ints_to_int(
+				255 - 255 * ((env->ite - i) * (env->ite - i))
+				% (env->ite * env->ite), 0, 0)));
 }
