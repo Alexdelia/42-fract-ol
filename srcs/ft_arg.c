@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:16:28 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:46:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_complex_arg(t_env *env, int ac, char **av)
 {
 	env->k.r = REAL;
 	env->k.i = IMAGINARY;
-	env->ite = MAX_ITERATION;
 	if (ac > 2 && ft_is_num(av[2]) == FALSE)
 		return (ft_pserc("Error: Some arg that should be numbers are not\n",
 				RED) * 0);
@@ -60,6 +59,7 @@ int	ft_arg(t_env *env, int ac, char **av)
 		env->type = T_MANDEL;
 	else
 		return (ft_wrong_param(av[1]));
+	ft_default(env);
 	if (ft_complex_arg(env, ac, av) == FALSE)
 		return (FALSE);
 	return (TRUE);
