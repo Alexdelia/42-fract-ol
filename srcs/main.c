@@ -6,52 +6,14 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:48:21 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/20 20:17:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:41:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_option(void)
+void	ft_default(t_env *env)
 {
-	ft_pserc("\n  - format:\n", "\033[3;37m");
-	ft_pserc("./fractol ", BWHI);
-	ft_pserc("[TYPE] ", "\033[1;34m");
-	ft_pserc("[MAX_ITERATION] ", RED);
-	ft_pserc("[REAL] [IMAGINARY]\n", BMAG);
-	ft_pserc("\n  - type:\n", "\033[3;34m");
-	ft_pserc("./fractol Julia\n  = ./fractol J\n", "\033[1;34m");
-	ft_pserc("./fractol Mandelbrot\n  = ./fractol M\n", "\033[1;34m");
-	ft_pserc("\n  - example:\n", "\033[3;37m");
-	ft_pserc("./fractol ", BWHI);
-	ft_pserc("J ", "\033[1;34m");
-	ft_pserc("250 ", RED);
-	ft_pserc("-0.7 0.27015\n\n", BMAG);
-	// might add RGB feature, size, etc ...
-	return (FALSE);
-}
-
-static int	ft_no_param(void)
-{
-	ft_pser("- No parameter entered\nHere is the list of availible option:\n");
-	ft_option();
-	return (1);
-}
-
-static void	ft_init_env(t_env *env)
-{
-	env->img = malloc(sizeof(t_img));
-	if (!env->img)
-		exit(1);
-	env->mlx = mlx_init();
-	env->img->addr = mlx_new_image(env->mlx, env->size_x, env->size_y);
-	env->img->buffer = mlx_get_data_addr(env->img->addr, &env->img->bpp,
-			&env->img->line_size, &env->img->endian);
-	//mlx_hook(env->win, x, 1L << x, ft_function, struct);	
-	mlx_hook(env->win, 2, 1L << 0, ft_keypress, env);
-	mlx_hook(env->win, 4, 0, ft_zoom, env);
-	mlx_hook(env->win, 15, 1L << 16, ft_minimize, env);
-	mlx_hook(env->win, 33, 1L << 5, ft_free_exit, env);
 	env->size_x = SIZE_X; // need to check if bigger than screen
 	env->size_y = SIZE_Y; //might had possiblity to change from arg
 	if (env->type == T_MANDEL)
@@ -59,6 +21,12 @@ static void	ft_init_env(t_env *env)
 		env->size_x = 1000;
 		env->size_y = 1000;
 	}
+	env->ite = MAX_ITERATION;
+	env->min = ft_init_complex(MIN_R, MIN_I);
+	env->max = ft_init_complex(MAX_R,
+			MIN_I + (MAX_R - MIN_R)* env->size_x / env->size_y);
+	env->k = ft_init_complex(-0.4, 0.6);
+	//env->color_shift = 0;
 }
 
 int	main(int ac, char **av)
