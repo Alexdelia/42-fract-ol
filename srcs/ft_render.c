@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:11:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:17:31 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_pixel_fix(t_img *img, int color, int index)
 	img->buffer[index + 3] = 0;
 }
 
-static void	ft_launch(t_env *env, int x, int y, int index)
+static void	ft_launch(t_env *env, int index)
 {	
 	if (env->type == T_JULIA)
-		ft_pixel_fix(env->img, ft_julia(env, x, y), index);
+		ft_pixel_fix(env->img, ft_julia(env), index);
 	else if (env->type == T_MANDEL)
-		ft_pixel_fix(env->img, ft_mandelbrot(env, x, y), index);
+		ft_pixel_fix(env->img, ft_mandelbrot(env), index);
 }
 
 int	ft_process(t_env *env)
@@ -51,7 +51,7 @@ int	ft_process(t_env *env)
 		while (x < env->size_x)
 		{
 			env->c.r = env->min.r + x * env->factor.r;
-			ft_launch(env, x, y, index);
+			ft_launch(env, index);
 			index += 4;
 			x++;
 		}
