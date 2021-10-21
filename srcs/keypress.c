@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:01:29 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:55:38 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 20:23:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	ft_keypress(int keycode, t_env *env)
 			|| keycode == K_W || keycode == K_Z || keycode == K_S
 			|| keycode == K_A || keycode == K_Q || keycode == K_D)
 		ft_move(keycode, env);
-	/*else if (keycode == K_M || keycode == K_N)
-		ft_zoom_mn(keycode, env);*/
+	else if (keycode == K_M || keycode == K_N)
+		ft_zoom_mn(keycode, env);
 	else
 		printf("Unkown input, keycode = %d\n", keycode);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:59:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 20:29:05 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int			ft_put_img_back(t_env *env);
 int			ft_minimize(t_env *env);
 int			ft_keypress(int keycode, t_env *env);
 int			ft_zoom(int keypress, int x, int y, t_env *env);
+void		ft_zoom_mn(int keypress, t_env *env);
 
 int			ft_julia(t_env *env);
 int			ft_mandelbrot(t_env *env);
