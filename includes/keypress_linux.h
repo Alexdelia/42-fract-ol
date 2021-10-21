@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:06:20 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:21:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:53:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # define K_Z			122
 # define K_Q			113
 
-# define M_SCROLL_UP	X
-# define M_SCROLL_UP	X
+# define M_SCROLL_UP	5
+# define M_SCROLL_DOWN	6
 
 # define K_M			109
 # define K_N			110

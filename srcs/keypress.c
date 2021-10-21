@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:01:29 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:38:43 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:55:38 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,27 @@ static void	ft_move(int key, t_env *env)
 
 	delta = ft_init_complex(ft_abs(env->max.r - env->min.r),
 			ft_abs(env->max.i - env->min.i));
+	if (key == K_RIGHT || key == K_D)
+	{
+		env->min.r -= delta.r * 0.05;
+		env->max.r -= delta.r * 0.05;
+	}
+	if (key == K_LEFT || key == K_A || key == K_Q)
+	{
+		env->min.r += delta.r * 0.05;
+		env->max.r += delta.r * 0.05;
+	}
+	if (key == K_UP || key == K_W || key == K_Z)
+	{
+		env->min.i -= delta.i * 0.05;
+		env->max.i -= delta.i * 0.05;
+	}
+	if (key == K_DOWN || key == K_S)
+	{
+		env->min.i += delta.i * 0.05;
+		env->max.i += delta.i * 0.05;
+	}
+	ft_render(env);
 }
 
 int	ft_keypress(int keycode, t_env *env)
@@ -43,6 +64,7 @@ int	ft_keypress(int keycode, t_env *env)
 		ft_move(keycode, env);
 	/*else if (keycode == K_M || keycode == K_N)
 		ft_zoom_mn(keycode, env);*/
-	//printf("k=%d\n", keycode);
+	else
+		printf("Unkown input, keycode = %d\n", keycode);
 	return (0);
 }
