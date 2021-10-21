@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:09:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:50:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 20:12:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_init_env(t_env *env)
 	env->win = mlx_new_window(env->mlx, env->size_x, env->size_y, "fract-ol");
 	//mlx_hook(env->win, x, 1L << x, ft_function, struct);	
 	mlx_hook(env->win, 2, 1L << 0, ft_keypress, env);
-	mlx_hook(env->win, 4, 0, ft_zoom, env);
+	mlx_hook(env->win, 4, 1L << 2, ft_zoom, env);
 	mlx_hook(env->win, 15, 1L << 16, ft_minimize, env);
 	mlx_hook(env->win, 33, 1L << 5, ft_free_exit, env);
 }

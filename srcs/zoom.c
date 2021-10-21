@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:53:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:20:50 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 20:07:46 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ static double	ft_interpolate(double min, double max, double inter)
 	return (min + ((max - min) * inter));
 }
 
-int	ft_zoom(t_env *env, int keypress, int x, int y)
+int	ft_zoom(int button, int x, int y, t_env *env)
 {
 	t_complex	mouse;
 	double		zoom;
 	double		inter;
 
-	if (keypress == M_SCROLL_UP || keypress == M_SCROLL_DOWN)
+	if (button == M_SCROLL_UP || button == M_SCROLL_DOWN)
 	{
 		mouse.r = (double)x / (env->size_x / (env->max.r - env->min.r))
 			+ env->min.r;
 		mouse.i = (double)y / (env->size_y / (env->max.i - env->min.i))
 			* -1 + env->max.i;
-		if (keypress == M_SCROLL_UP)
+		if (button == M_SCROLL_UP)
 			zoom = 0.80;
 		else
 			zoom = 1.20;
@@ -40,5 +40,7 @@ int	ft_zoom(t_env *env, int keypress, int x, int y)
 		env->max.i = ft_interpolate(mouse.i, env->max.i, inter);
 		ft_render(env);
 	}
+	else
+		printf("Unkown mouse input, keycode = %d\n", button);
 	return (0);
 }
