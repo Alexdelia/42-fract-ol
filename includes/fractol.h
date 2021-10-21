@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:05:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:08:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ typedef struct s_env
 	int			size_y;
 	int			type;
 	long		ite;
-	double		real;
-	double		imaginary;
 	t_complex	min;
 	t_complex	max;
 	t_complex	factor;
@@ -73,10 +71,8 @@ typedef struct s_color
 
 typedef struct s_complex
 {
-	double		cr;
-	double		ci;
-	double		zr;
-	double		zi;
+	double		r;
+	double		i;
 }				t_complex;
 
 int			ft_arg(t_env *env, int ac, char **av);

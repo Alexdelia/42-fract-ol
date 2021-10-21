@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:37:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:07:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:10:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@
 
 int	ft_julia(t_env *env)
 {
-	t_complex	c;
+	t_complex	z;
 	int			i;
 
-	c.zr = env->c.cr;
-	c.zi = env->c.ci;
+	z.r = env->c.r;
+	z.i = env->c.i;
 	i = 0;
-	while (c.zr * c.zr + c.zi * c.zi < 4 && i < env->ite)
+	while (z.r * z.r + z.i * z.i < 4 && i < env->ite)
 	{
-		c = ft_init_complex(c.zr * c.zr - c.zi * c.zi + env->k.cr,
-				2 * c.zr * c.zi + env->k.cr);
+		z = ft_init_complex(z.r * z.r - z.i * z.i + env->k.r,
+				2 * z.r * z.i + env->k.i);
 		i++;
 	}
 	return (ft_red_to_black(ft_ints_to_int(

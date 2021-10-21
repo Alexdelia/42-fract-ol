@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/20 20:16:53 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:11:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int	ft_process(t_env *env)
 	y = 0;
 	while (y < env->size_y)
 	{
-		env->c.ci = env->max.ci - y * env->factor.ci;
+		env->c.i = env->max.i - y * env->factor.i;
 		x = 0;
 		while (x < env->size_x)
 		{
-			env->c.cr = env->min.cr + x * env->factor.cr;
+			env->c.r = env->min.r + x * env->factor.r;
 			ft_launch(env, x, y, index);
 			index += 4;
 			x++;
@@ -65,8 +65,8 @@ int	ft_process(t_env *env)
 int	ft_render(t_env *env)
 {
 	env->factor = ft_init_complex(
-			(env->max.cr - env->min.cr) / (env->size_x - 1),
-			(env->max.ci - env->min.ci) / (env->size_y - 1));
+			(env->max.r - env->min.r) / (env->size_x - 1),
+			(env->max.i - env->min.i) / (env->size_y - 1));
 	ft_process(env);
 	ft_display(env);
 	return (TRUE); //

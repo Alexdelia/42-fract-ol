@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:09:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 12:43:07 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:09:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int	ft_mandelbrot(t_env *env)
 	double		tmp;
 	int			i;
 
-	c.zr = env->c.cr;
-	c.zi = env->c.ci;
+	c.r = env->c.r;
+	c.i = env->c.i;
 	i = 0;
-	while (c.zr * c.zr + c.zi * c.zi < 4 && i < env->ite)
+	while (c.r * c.r + c.i * c.i < 4 && i < env->ite)
 	{
-		tmp = c.zr * c.zr - c.zi * c.zi + env->c.cr;
-		c.zi = 2 * c.zr * c.zi + env->c.ci;
-		c.zr = tmp;
+		tmp = c.r * c.r - c.i * c.i + env->c.r;
+		c.i = 2 * c.r * c.i + env->c.i;
+		c.r = tmp;
 		i++;
 	}
 	return (ft_red_to_black(ft_ints_to_int(
