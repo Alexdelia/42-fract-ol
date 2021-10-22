@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 15:36:53 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/22 15:46:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:19:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_mandelbar(t_env *env)
 {
 	t_complex	c;
 	double		tmp;
-	int	i;
+	int			i;
 
 	c.r = env->c.r;
 	c.i = env->c.i;

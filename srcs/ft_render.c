@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/22 15:59:28 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:14:44 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_process(t_env *env)
 		printf("\rRender: [%d%%]", (y * 100) / env->size_y);
 	}
 	printf("\t\033[1;32mDone\033[0m\n");
-	return (TRUE); //
+	return (TRUE);
 }
 
 int	ft_render(t_env *env)
@@ -78,5 +78,5 @@ int	ft_render(t_env *env)
 			(env->max.i - env->min.i) / (env->size_y - 1));
 	ft_process(env);
 	ft_display(env);
-	return (TRUE); //
+	return (TRUE);
 }

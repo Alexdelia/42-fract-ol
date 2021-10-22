@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/22 15:57:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:14:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ static int	ft_arg_fractal(t_env *env, char **av)
 		env->type = T_MA_SET;
 	else if (ft_strcmp(av[1], "MB") == 0 || ft_strcmp(av[1], "Mandelbar") == 0)
 		env->type = T_MB;
-	else if (ft_strcmp(av[1], "BS") == 0 || ft_strcmp(av[1], "Burning_Ship") == 0)
+	else if (ft_strcmp(av[1], "BS") == 0
+		|| ft_strcmp(av[1], "Burning_Ship") == 0)
 		env->type = T_BS;
 	else if (ft_strcmp(av[1], "JS") == 0 || ft_strcmp(av[1], "Julia_S") == 0)
 		env->type = T_JS;

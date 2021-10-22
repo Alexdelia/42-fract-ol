@@ -6,12 +6,12 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:10:57 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 19:14:20 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:11:47 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEYPRESS_LINUX_H
-# define KEYPRESS_LINUX_H
+#ifndef KEYPRESS_MACOS_H
+# define KEYPRESS_MACOS_H
 
 # define K_ESC			53
 
