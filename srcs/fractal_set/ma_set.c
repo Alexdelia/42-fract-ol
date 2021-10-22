@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:09:06 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/22 15:42:48 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:24:53 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	ft_ma_set(t_env *env)
 	i = 0;
 	while (c.r * c.r + c.i * c.i - 12 < 4 && i < env->ite)
 	{
-		tmp = c.r / c.r - c.i / c.i + c.r * c.r - c.i * c.i
-			+ env->c.r - env->k.r;
+		tmp = c.i + c.r * c.r - c.i * c.i + env->c.r - env->k.r;
 		c.i = 2 * c.r * c.i + env->c.i - env->k.i;
 		c.r = tmp;
 		i++;
