@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:04:52 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:46:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:57:05 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,31 @@ int	ft_complex_arg(t_env *env, int ac, char **av)
 	return (TRUE);
 }
 
-int	ft_arg(t_env *env, int ac, char **av)
+static int	ft_arg_fractal(t_env *env, char **av)
 {
-	if (ft_has_help(ac, av) == TRUE)
-		return (ft_option());
 	env->type = 0;
 	if (ft_strcmp(av[1], "J") == 0 || ft_strcmp(av[1], "Julia") == 0)
 		env->type = T_JULIA;
 	else if (ft_strcmp(av[1], "M") == 0 || ft_strcmp(av[1], "Mandelbrot") == 0)
 		env->type = T_MANDEL;
+	else if (ft_strcmp(av[1], "MA") == 0 || ft_strcmp(av[1], "MA_set") == 0)
+		env->type = T_MA_SET;
+	else if (ft_strcmp(av[1], "MB") == 0 || ft_strcmp(av[1], "Mandelbar") == 0)
+		env->type = T_MB;
+	else if (ft_strcmp(av[1], "BS") == 0 || ft_strcmp(av[1], "Burning_Ship") == 0)
+		env->type = T_BS;
+	else if (ft_strcmp(av[1], "JS") == 0 || ft_strcmp(av[1], "Julia_S") == 0)
+		env->type = T_JS;
 	else
+		return (FALSE);
+	return (TRUE);
+}
+
+int	ft_arg(t_env *env, int ac, char **av)
+{
+	if (ft_has_help(ac, av) == TRUE)
+		return (ft_option());
+	if (ft_arg_fractal(env, av) == FALSE)
 		return (ft_wrong_param(av[1]));
 	ft_default(env);
 	if (ft_complex_arg(env, ac, av) == FALSE)

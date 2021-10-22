@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:19:02 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 18:17:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:59:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ static void	ft_launch(t_env *env, int index)
 		ft_pixel_fix(env->img, ft_julia(env), index);
 	else if (env->type == T_MANDEL)
 		ft_pixel_fix(env->img, ft_mandelbrot(env), index);
+	else if (env->type == T_MA_SET)
+		ft_pixel_fix(env->img, ft_ma_set(env), index);
+	else if (env->type == T_MB)
+		ft_pixel_fix(env->img, ft_mandelbar(env), index);
+	else if (env->type == T_BS)
+		ft_pixel_fix(env->img, ft_burning_ship(env), index);
+	else if (env->type == T_JS)
+		ft_pixel_fix(env->img, ft_julia_s(env), index);
 }
 
 int	ft_process(t_env *env)
@@ -42,6 +50,7 @@ int	ft_process(t_env *env)
 	int	y;
 	int	index;
 
+	mlx_string_put(env->mlx, env->win, 100, 100, 0xCCCCCC, "Rendering");
 	index = 0;
 	y = 0;
 	while (y < env->size_y)

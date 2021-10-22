@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/21 20:29:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:59:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@
 
 # define T_JULIA	1
 # define T_MANDEL	2
+# define T_MA_SET	3
+# define T_MB		4
+# define T_BS		5
+# define T_JS		6
 
 # define SIZE_X			1000
 # define SIZE_Y			1000
@@ -100,6 +104,10 @@ void		ft_zoom_mn(int keypress, t_env *env);
 
 int			ft_julia(t_env *env);
 int			ft_mandelbrot(t_env *env);
+int			ft_ma_set(t_env *env);
+int			ft_mandelbar(t_env *env);
+int			ft_burning_ship(t_env *env);
+int			ft_julia_s(t_env *env);
 
 int			ft_ints_to_int(int r, int g, int b);
 int			ft_adjust_int(int color);

@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/21 19:45:40 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/22 15:58:00 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,9 @@ SRCSNAME =	main.c \
 			ft_arg.c \
 			ft_render.c color.c \
 			ft_display.c \
-			julia.c mandelbrot.c \
+			fractal_set/julia.c fractal_set/julia_s.c \
+			fractal_set/mandelbrot.c fractal_set/ma_set.c \
+			fractal_set/mandelbar.c fractal_set/burning_ship.c \
 			free.c zoom.c keypress.c \
 			utils/ft_is_double.c utils/ft_is_num.c \
 			utils/help.c utils/ft_init.c
