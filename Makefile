@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/22 15:58:00 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/22 16:21:59 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME =	fractol
 CC = 	clang -Wall -Werror -Wextra
 AR =	ar rcs
 RM = 	rm -rf
-# FLAGS +=	-O2
-FLAGS =	-g# -fsanitize=address
+FLAGS =	-O2# -g# -fsanitize=address
 
 # GRAPHICAL LFGLAGS (for linux):
 LDFLAGS		+=	-lXext -lX11
