@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/24 21:39:13 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/24 21:42:13 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,7 @@ endif
 $(NAME):	objs_dir $(OBJSNAME) lib mlx
 	#@$(AR) $(NAME) $(OBJS)
 	@$(CC) $(FLAGS) $(LDFLAGS) $(OBJS) $(LBNAME) $(MLXNAME) -o $(NAME)
-	@echo "$(B)$(MAG)$(NAME) compiled.$(D)"
+	@echo "\n$(B)$(MAG)$(NAME) compiled.$(D)"
 
 objs_dir:
 	@mkdir $(OBJSPATH) 2> /dev/null || true
