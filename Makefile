@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/22 16:21:59 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/24 19:22:42 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,10 @@ RM = 	rm -rf
 FLAGS =	-O2# -g# -fsanitize=address
 
 # GRAPHICAL LFGLAGS (for linux):
-LDFLAGS		+=	-lXext -lX11
+ifeq ($(shell uname), Linux)
+	LDFLAGS		+=	-lXext -lX11
+else
+	LDFLAGS		+=	-lmlx -framework OpenGL -framework AppKit
 # -lmlx
 
 # LDFLAGS (math.h)
@@ -47,7 +50,12 @@ LBPATH =	./libft/
 LBNAME =	$(LBPATH)libft.a
 LBINC =		-I$(LBPATH)
 
-MLXPATH =	./mlx/
+ifeq ($(shell uname), Linux)
+	MLXPATH =	./mlx/
+else
+	MLXPATH	=	./mlx_macos/
+endif
+
 MLXNAME =	$(MLXPATH)libmlx.a
 MLXINC =	-I$(MLXPATH)
 
