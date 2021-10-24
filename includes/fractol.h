@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 18:49:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/22 16:12:38 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/24 21:22:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 # include "../libft/includes/libft.h"
 # include "../mlx/mlx.h"
 
-# if __APPLE__
-#  include "keypress_macos.h"
-# elif __linux__
+# if __linux__
 #  include "keypress_linux.h"
 # elif __unix__
 #  include "keypress_linux.h"
 # else
-#  error "OS not found"
+#  error "OS not supported"
 # endif
 
 # include <math.h>

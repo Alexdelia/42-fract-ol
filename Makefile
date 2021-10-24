@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/24 19:22:42 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/24 21:39:13 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,13 @@ AR =	ar rcs
 RM = 	rm -rf
 FLAGS =	-O2# -g# -fsanitize=address
 
+UNAME = $(shell uname)
+
 # GRAPHICAL LFGLAGS (for linux):
-ifeq ($(shell uname), Linux)
-	LDFLAGS		+=	-lXext -lX11
-else
-	LDFLAGS		+=	-lmlx -framework OpenGL -framework AppKit
+#ifeq ($(shell uname), Linux)
+LDFLAGS		+=	-lXext -lX11
+#else
+	#LDFLAGS		+=	-lmlx -framework OpenGL -framework AppKit
 # -lmlx
 
 # LDFLAGS (math.h)
@@ -50,11 +52,11 @@ LBPATH =	./libft/
 LBNAME =	$(LBPATH)libft.a
 LBINC =		-I$(LBPATH)
 
-ifeq ($(shell uname), Linux)
-	MLXPATH =	./mlx/
-else
-	MLXPATH	=	./mlx_macos/
-endif
+#ifeq ($(shell uname), Linux)
+MLXPATH =	./mlx/
+#else
+#	MLXPATH	=	./mlx_macos/
+#endif
 
 MLXNAME =	$(MLXPATH)libmlx.a
 MLXINC =	-I$(MLXPATH)
@@ -85,12 +87,17 @@ OBJS = $(addprefix $(OBJSPATH), $(notdir $(OBJSNAME)))
 
 # *************************************************************************** #
 
+ifeq ($(UNAME), Linux)
 all:		$(NAME)
+else
+all:
+	@echo "$(B)$(RED)Error: Only Linux supported.$(D)"
+endif
 
 $(NAME):	objs_dir $(OBJSNAME) lib mlx
 	#@$(AR) $(NAME) $(OBJS)
 	@$(CC) $(FLAGS) $(LDFLAGS) $(OBJS) $(LBNAME) $(MLXNAME) -o $(NAME)
-	@echo "$(B)$(MAG)$(NAME) compiled$(D)"
+	@echo "$(B)$(MAG)$(NAME) compiled.$(D)"
 
 objs_dir:
 	@mkdir $(OBJSPATH) 2> /dev/null || true
