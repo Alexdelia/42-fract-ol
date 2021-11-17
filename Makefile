@@ -6,15 +6,19 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/24 21:42:13 by adelille         ###   ########.fr        #
+#    Updated: 2021/11/17 15:58:43 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	fractol
-CC = 	clang -Wall -Werror -Wextra
+CC = 	clang
 AR =	ar rcs
 RM = 	rm -rf
-FLAGS =	-O2# -g# -fsanitize=address
+
+CFLAGS =	-Wall -Werror -Wextra
+CFLAGS +=	-O2
+#CFLAGS +=	-g
+#CFLAGS +=	-fsanitize=address
 
 UNAME = $(shell uname)
 
@@ -29,8 +33,11 @@ LDFLAGS		+=	-lXext -lX11
 LDFLAGS		+=	-lm
 
 # **************************************************************************** #
+#	MAKEFILE	#
 
 MAKEFLAGS += --silent
+
+SHELL := bash
 
 B =		$(shell tput bold)
 BLA =	$(shell tput setaf 0)
@@ -48,9 +55,9 @@ CLR =	$(shell tput el 1)
 # **************************************************************************** #
 #	 LIB	#
 
-LBPATH =	./libft/
-LBNAME =	$(LBPATH)libft.a
-LBINC =		-I$(LBPATH)
+LIBPATH =	./libft/
+LIBNAME =	$(LIBPATH)libft.a
+LIBINC =	-I$(LIBPATH)
 
 #ifeq ($(shell uname), Linux)
 MLXPATH =	./mlx/
@@ -62,12 +69,13 @@ MLXNAME =	$(MLXPATH)libmlx.a
 MLXINC =	-I$(MLXPATH)
 
 # **************************************************************************** #
+#	SRCS	#
 
 SRCSPATH =	./srcs/
 OBJSPATH =	./objs/
 INC =		./includes/
 
-SRCSNAME =	main.c \
+#SRCSNAME =	main.c \
 			ft_arg.c \
 			ft_render.c color.c \
 			ft_display.c \
@@ -78,50 +86,72 @@ SRCSNAME =	main.c \
 			utils/ft_is_double.c utils/ft_is_num.c \
 			utils/help.c utils/ft_init.c
 
-SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
-OBJSNAME = $(SRCS:.c=.o)
-OBJS = $(addprefix $(OBJSPATH), $(notdir $(OBJSNAME)))
+#SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
 
-%.o: %.c
-	$(CC) $(FLAGS) -Imlx $(BUFFER) -I$(INC) -c $< -o $(OBJSPATH)$(notdir $@)
+SRCS =		$(wildcard $(SRCSPATH)*.c) $(wildcard $(SRCSPATH)**/*.c)
+SRCSNAME =	$(subst $(SRCSPATH), , $(SRCS))
+
+OBJSNAME =	$(SRCSNAME:.c=.o)
+OBJS =		$(addprefix $(OBJSPATH), $(OBJSNAME))
+
+#%.o: %.c
+#	$(CC) $(FLAGS) -Imlx $(BUFFER) -I$(INC) -c $< -o $(OBJSPATH)$(notdir $@)
 
 # *************************************************************************** #
 
+define	progress_bar
+	i=0
+	while [[ $$i -le $(words $(SRCS)) ]] ; do \
+		printf " " ; \
+		((i = i + 1)) ; \
+	done
+	printf "$(B)]\r[$(GRE)"
+endef
+
+# *************************************************************************** #
+#	RULES	#
+
 ifeq ($(UNAME), Linux)
-all:		$(NAME)
+all:		launch $(NAME)
+	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
 else
 all:
 	@echo "$(B)$(RED)Error: Only Linux supported.$(D)"
 endif
 
-$(NAME):	objs_dir $(OBJSNAME) lib mlx
-	#@$(AR) $(NAME) $(OBJS)
-	@$(CC) $(FLAGS) $(LDFLAGS) $(OBJS) $(LBNAME) $(MLXNAME) -o $(NAME)
-	@echo "\n$(B)$(MAG)$(NAME) compiled.$(D)"
+launch:
+	$(call progress_bar)
 
-objs_dir:
-	@mkdir $(OBJSPATH) 2> /dev/null || true
-	
+$(NAME):	$(OBJS) lib mlx
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBNAME) $(MLXNAME) -o $(NAME)
+
+$(OBJSPATH)%.o: $(SRCSPATH)%.c
+	@mkdir -p $(dir $@) # 2> /dev/null || true
+	$(CC) $(CFLAGS) -Imlx -I$(INC) -c $< -o $@
+	@printf "█"
+
 lib:
-	@make -C $(LBPATH)
+	@printf "$(D)$(B)$(BLU)\n$(NAME) objects compiled\n\n$(D)"
+	@make -C $(LIBPATH)
 
 mlx:
-	@make -C $(MLXPATH)
+	@make -C $(MLXPATH) > /dev/null 2>&1 || true
+	@printf "$(B)$(CYA)$(MLXNAME) compiled\n$(D)"
 
 clean:
 	@$(RM) $(OBJSNAME)
-	@make clean -C $(LBPATH)
-	@make clean -C $(MLXPATH)
-	@echo "$(B)Cleared.$(D)"
+	@make clean -C $(LIBPATH)
+	@make clean -C $(MLXPATH) > /dev/null 2>&1 || true
+	@echo "$(B)Cleared$(D)"
 
 
 fclean:		clean
 	@$(RM) $(OBJSPATH)
 	@$(RM) $(NAME)
-	@make fclean -C $(LBPATH)
+	@make fclean -C $(LIBPATH)
 
 re:			fclean all
 
-.PHONY: all clean fclean re objs_dir lib mlx
+.PHONY: all clean fclean re lib mlx
 
 # **************************************************************************** #
